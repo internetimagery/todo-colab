@@ -1,0 +1,42 @@
+Make the todo program work with git specifically.
+
+Add check to see if git is there. Use webbrowser.open() on a button
+to take people to the download.
+
+Grab the foldername os.path.dirname() of the current file and check if it
+is a valid repository already.
+OR if no file is open yet, grab the open project.
+
+Perform this check again for every file that is opened.
+
+If the project is NOT a repository, offer to download one from a "clone"
+url, or provide a button to create one.
+
+Creating one would prompt a new folder path. Create a maya project in the path
+and init a new git repo there. Committing the inital maya files to "master".
+
+Check the branch we are on. If it is master, prompt the user to put in a name.
+If we are on a branch fitting our naming scheme (below) then set that name to our user.
+
+Figure out when best to push and pull. Track commits to master, and checkout all files
+from there if/when anything changes.
+
+prefix branches with purpose for our naming scheme. ie: user-john publish-rigging etc
+
+reimplement the todo functionality. Split it up into submodules some more.
+
+add four tabs: Todo, Publish, Restore, Settings.
+
+Todo: Our todos, that also double as our commits. Perhaps add a button that picks files
+to be tracked manually, and commits with git commit -am "message"
+
+Publish: Check for branches with the prefix "publish-". Generate a list of the branches.
+Offer to publish "this file" in a button, or publish "choose files". Commit them into the branch specifiied.
+todo... figure out merging.
+
+Restore: Offer to restore commits (checkout files) of the current file, or pick the files.
+To pick the files, temporarally checkout the commit, and open a file picker. Swap back after
+the picker closes. "try finally"
+
+Settings: Input remote urls here. Username which corresponds to branch name. Branches to keep
+track of and have their contents automatically checked into this branch (ie publish-rigging)
