@@ -40,3 +40,10 @@ the picker closes. "try finally"
 
 Settings: Input remote urls here. Username which corresponds to branch name. Branches to keep
 track of and have their contents automatically checked into this branch (ie publish-rigging)
+
+commands:
+
+auto-merge branch:
+git merge branch -X theirs -m "message"
+auto commit changes:
+git commit -am "message"
